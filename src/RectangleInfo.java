@@ -9,8 +9,8 @@ public class RectangleInfo
         String trash;
         boolean done = false;
 
-        double width;
-        double height;
+        double width = 0.0;
+        double height = 0.0;
         double area;
         double perimeter;
         double hypotenuse;
@@ -50,16 +50,12 @@ public class RectangleInfo
                 System.out.println("You must enter a valid number, not " + trash);
             }
 
-
-            width = in.nextDouble();
-            height = in.nextDouble();
-
             area = width * height;
             perimeter = (width * 2) + (height * 2);
             hypotenuse = sqrt(Math.pow(width,2) + Math.pow(height,2));
 
             System.out.println("The area of the rectangle is " + area + " and the perimeter of the rectangle is " + perimeter);
-            System.out.println(" The lenght of the diagonal or hypotenuse is " + hypotenuse);
+            System.out.println("The length of the diagonal or hypotenuse is " + hypotenuse);
 
         } while (!done);
     }

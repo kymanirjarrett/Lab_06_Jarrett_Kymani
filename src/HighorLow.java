@@ -9,7 +9,7 @@ public class HighorLow
         String trash;
         boolean done = false;
 
-        int randGuess;
+        int randGuess = 0;
 
         Random generator = new Random();
         int randInt = generator.nextInt(10);
@@ -19,18 +19,27 @@ public class HighorLow
 
             System.out.print("Guess the random number [1 - 10]: ");
 
-            if(in.hasNextInt(1-10))
+            if(in.hasNextInt())
             {
                 randGuess = in.nextInt();
                 in.nextLine();
 
+                if(randGuess >= 1 && randGuess <= 10)
+                {
+                    done = true;
+                }
+                else
+                {
+                    System.out.println("You must input a valid guess between 1 and 10, not: " + randGuess);
+                }
+
                 System.out.println("Your guess was " + randGuess);
-                done = true;
+
             }
             else
             {
                 trash = in.nextLine();
-                System.out.println("You must input a valid ");
+                System.out.println("You must input a valid guess, not " + trash);
             }
 
         } while (!done);

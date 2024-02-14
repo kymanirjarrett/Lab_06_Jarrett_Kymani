@@ -8,9 +8,9 @@ public class FuelCosts
         String trash;
         boolean done = false;
 
-        double gasGallon;
-        double fuelEffic;
-        double gasPrice;
+        double gasGallon = 0.0;
+        double fuelEffic = 0.0;
+        double gasPrice = 0.0;
         double mileCost;
         double gasDist;
 
@@ -68,13 +68,6 @@ public class FuelCosts
                 System.out.println("You must enter a valid number, not " + trash);
             }
         } while (!done);
-
-        gasGallon = in.nextDouble();
-        in.nextLine();
-        fuelEffic = in.nextDouble();
-        in.nextLine();
-        gasPrice = in.nextDouble();
-        in.nextLine();
 
         gasDist = gasGallon/fuelEffic;
         System.out.println("The car can travel " + gasDist + " miles with the current amount of gas.");
